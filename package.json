@@ -1,24 +1,43 @@
 {
-  "name": "dmeleshko.github.io",
-  "version": "0.1.0",
-  "description": "Personal website/cv",
-  "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "solid-devtools": "^0.27.3",
-    "typescript": "^5.1.3",
-    "vite": "^4.3.9",
-    "vite-plugin-solid": "^2.7.0"
-  },
-  "dependencies": {
-    "autoprefixer": "^10.4.15",
-    "postcss": "^8.4.29",
-    "solid-js": "^1.7.6",
-    "tailwindcss": "^3.3.3"
-  }
+    "name": "dmeleshko.github.io",
+    "version": "0.1.0",
+    "description": "Personal website/cv",
+    "scripts": {
+        "start": "vite",
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview",
+        "pages": "pnpm install && pnpm build && git checkout github-pages && cp -rf dist/assets dist/index.html ./ && git add assets index.html && git commit -m 'site rebuild' && git push && git checkout main"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^6.5.0",
+        "@typescript-eslint/parser": "^6.5.0",
+        "eslint": "^8.48.0",
+        "eslint-plugin-solid": "^0.13.0",
+        "prettier": "^3.0.3",
+        "prettier-plugin-tailwindcss": "^0.5.4",
+        "solid-devtools": "^0.27.3",
+        "typescript": "^5.1.3",
+        "vite": "^4.3.9",
+        "vite-plugin-solid": "^2.7.0"
+    },
+    "dependencies": {
+        "autoprefixer": "^10.4.15",
+        "postcss": "^8.4.29",
+        "solid-icons": "^1.0.11",
+        "solid-js": "^1.7.6",
+        "tailwindcss": "^3.3.3"
+    },
+    "prettier": {
+        "plugins": [
+            "prettier-plugin-tailwindcss"
+        ],
+        "semi": true,
+        "singleQuote": true,
+        "quoteProps": "consistent",
+        "bracketSameLine": true,
+        "tabWidth": 4,
+        "printWidth": 120
+    }
 }
